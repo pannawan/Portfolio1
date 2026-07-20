@@ -1,145 +1,206 @@
+```html
 <!DOCTYPE html>
-
 <html lang="th">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>My Portfolio</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
 
-    <title>Portfolio | ปัญนวรรณ ธานะวาท</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Kanit', sans-serif;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+body{
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#6dd5fa,#ffd54f);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+/* ลูกโป่งน้ำด้านหลัง */
+.bubble{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.25);
+    box-shadow:
+    inset 10px 10px 20px rgba(255,255,255,0.5),
+    0 10px 30px rgba(0,0,0,0.1);
+    animation:float 8s infinite ease-in-out;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+.bubble:nth-child(1){
+    width:180px;
+    height:180px;
+    top:10%;
+    left:10%;
+}
 
-    <link rel="stylesheet" href="style.css">
+.bubble:nth-child(2){
+    width:120px;
+    height:120px;
+    bottom:15%;
+    right:15%;
+    animation-delay:2s;
+}
+
+.bubble:nth-child(3){
+    width:220px;
+    height:220px;
+    top:40%;
+    right:5%;
+    animation-delay:4s;
+}
+
+.bubble:nth-child(4){
+    width:90px;
+    height:90px;
+    bottom:10%;
+    left:25%;
+    animation-delay:1s;
+}
+
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-40px);
+    }
+}
+
+
+/* กล่องเนื้อหา */
+.container{
+    position:relative;
+    z-index:2;
+    background:rgba(255,255,255,0.85);
+    width:90%;
+    max-width:700px;
+    padding:40px;
+    text-align:center;
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+
+.profile{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #ffd54f;
+}
+
+
+h1{
+    margin-top:20px;
+    font-size:42px;
+    color:#1976d2;
+}
+
+h2{
+    color:#f9a825;
+    margin:10px;
+}
+
+p{
+    color:#555;
+    font-size:18px;
+}
+
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 30px;
+    background:#1976d2;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+
+.btn:hover{
+    background:#f9a825;
+    transform:scale(1.05);
+}
+
+
+nav{
+    margin-top:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#1976d2;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#f9a825;
+}
+
+</style>
 
 </head>
 
+
 <body>
 
-    <!-- ฟองสบู่ -->
+<!-- ลูกโป่งน้ำ -->
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
 
-    <div class="bubbles">
 
-        <span></span>
+<div class="container">
 
-        <span></span>
+    <!-- เปลี่ยนรูปเป็นของตัวเอง -->
+    <img src="images/profile.jpg" class="profile">
 
-        <span></span>
+    <h1>My Portfolio</h1>
 
-        <span></span>
+    <h2> ปัญนวรรณ - ธานะวาท
+</h2>
 
-        <span></span>
+    <p>
+        นักเรียนชั้นมัธยมศึกษาปีที่ 6/3 <br>
+        โรงเรียนพานทองต้นสน<br>
+        สาขา/แผนการเรียน สาย วิทย์ - คณิต
+    </p>
 
-        <span></span>
 
-        <span></span>
+    <a href="personal.html" class="btn">
+        เข้าชม Portfolio
+    </a>
 
-    </div>
-
-    <!-- เมนู -->
 
     <nav>
-
-        <h2>🩵 Portfolio</h2>
-
-        <ul>
-
-            <li><a href="index.html">หน้าหลัก</a></li>
-
-            <li><a href="about.html">ประวัติ</a></li>
-
-            <li><a href="education.html">การศึกษา</a></li>
-
-            <li><a href="activities.html">ผลงาน</a></li>
-
-            <li><a href="contact.html">ติดต่อ</a></li>
-
-        </ul>
-
+        <a href="index.html">Home</a>
+        <a href="personal.html">Profile</a>
+        <a href="education.html">Education</a>
+        <a href="activity.html">Activity</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- หน้าหลัก -->
 
-    <section class="hero">
+</div>
 
-        <div class="text">
-
-            <h1>PORTFOLIO</h1>
-
-            <h2>ปัญนวรรณ ธานะวาท</h2>
-
-            <p>
-
-                ยินดีต้อนรับสู่เว็บไซต์แฟ้มสะสมผลงานของฉัน<br>
-
-                นักเรียนชั้นมัธยมศึกษาปีที่ 6
-
-            </p>
-
-            <a href="about.html" class="button">
-
-                เริ่มต้น →
-
-            </a>
-
-        </div>
-
-        <div class="image">
-
-            <img src="images/profile.jpg" alt="รูปโปรไฟล์">
-
-        </div>
-
-    </section>
-
-    <!-- การ์ด -->
-
-    <section class="cards">
-
-        <div class="card">
-
-            <h1>👩🏻‍🎓</h1>
-
-            <h3>ประวัติส่วนตัว</h3>
-
-            <p>ข้อมูลส่วนตัว ความสามารถ และเป้าหมาย</p>
-
-        </div>
-
-        <div class="card">
-
-            <h1>📚</h1>
-
-            <h3>ประวัติการศึกษา</h3>
-
-            <p>ประวัติการศึกษาและผลการเรียน</p>
-
-        </div>
-
-        <div class="card">
-
-            <h1>🏆</h1>
-
-            <h3>กิจกรรมและผลงาน</h3>
-
-            <p>ผลงาน กิจกรรม และเกียรติบัตร</p>
-
-        </div>
-
-    </section>
-
-    <footer>
-
-        © 2026 Portfolio | ปัญนวรรณ ธานะวาท
-
-    </footer>
 
 </body>
-
 </html>
+```

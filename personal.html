@@ -1,0 +1,358 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personal Information</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Kanit',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#6dd5fa,#ffd54f);
+    padding:40px 20px;
+    overflow-x:hidden;
+}
+
+
+/* ลูกโป่งน้ำ */
+
+.bubble{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.25);
+    box-shadow:
+    inset 10px 10px 20px rgba(255,255,255,.5),
+    0 10px 30px rgba(0,0,0,.1);
+
+    animation:float 7s infinite ease-in-out;
+}
+
+
+.bubble:nth-child(1){
+    width:180px;
+    height:180px;
+    top:5%;
+    left:5%;
+}
+
+.bubble:nth-child(2){
+    width:120px;
+    height:120px;
+    right:10%;
+    bottom:10%;
+    animation-delay:2s;
+}
+
+.bubble:nth-child(3){
+    width:230px;
+    height:230px;
+    right:-50px;
+    top:30%;
+    animation-delay:4s;
+}
+
+
+@keyframes float{
+
+    50%{
+        transform:translateY(-40px);
+    }
+
+}
+
+
+/* เนื้อหา */
+
+.container{
+
+    position:relative;
+    z-index:2;
+
+    max-width:900px;
+    margin:auto;
+
+    background:rgba(255,255,255,.9);
+
+    padding:40px;
+
+    border-radius:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
+
+
+h1{
+
+    text-align:center;
+
+    color:#1976d2;
+
+    font-size:40px;
+
+}
+
+
+h2{
+
+    color:#f9a825;
+
+    margin-top:30px;
+
+}
+
+
+.profile-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    margin-top:30px;
+
+}
+
+
+.profile-box img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:6px solid #ffd54f;
+
+}
+
+
+.info{
+
+    font-size:18px;
+
+    color:#555;
+
+    line-height:2;
+
+}
+
+
+.card{
+
+    background:#e3f2fd;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    margin-top:15px;
+
+    border-left:8px solid #1976d2;
+
+}
+
+
+.skill span{
+
+    display:inline-block;
+
+    background:#1976d2;
+
+    color:white;
+
+    padding:8px 18px;
+
+    margin:5px;
+
+    border-radius:20px;
+
+}
+
+
+/* เมนู */
+
+nav{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+
+nav a{
+
+    text-decoration:none;
+
+    color:#1976d2;
+
+    font-weight:bold;
+
+    margin:0 10px;
+
+}
+
+
+nav a:hover{
+
+    color:#f9a825;
+
+}
+
+
+@media(max-width:700px){
+
+.profile-box{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="bubble"></div>
+<div class="bubble"></div>
+<div class="bubble"></div>
+
+
+
+<div class="container">
+
+
+<h1>
+Personal Information
+</h1>
+
+
+
+<div class="profile-box">
+
+
+<img src="images/profile.jpg">
+
+
+
+<div class="info">
+
+<b>ชื่อ - นามสกุล :</b> นางสาวปัญนวรรณ ธานะวาท
+<br>
+
+<b>ชื่อเล่น :</b> พริกไทย<br>
+
+<b>วันเกิด :</b> 6 ธันวาคม 2551<br>
+
+<b>อายุ :</b> 17 ปี<br>
+
+<b>โรงเรียน :</b> พานทอง <br>
+
+<b> แผนการเรียน :</b> วิทย์ - คณิต <br>
+
+<b>ที่อยู่ :</b> .........................<br>
+
+
+</div>
+
+
+</div>
+
+
+
+<h2>About Me</h2>
+
+<div class="card">
+
+ฮันเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 
+มีความสนใจด้านเทคโนโลยี การเขียนเว็บไซต์ 
+และการพัฒนาทักษะด้านการเขียนโปรแกรม 
+พร้อมเรียนรู้สิ่งใหม่ ๆ อยู่เสมอ
+
+</div>
+
+
+
+<h2>My Skills</h2>
+
+<div class="card skill">
+
+<span>กระบวนการวิทย์</span>
+
+<span>คำนวณเเละสถิติ</span>
+
+<span>บวก ลบ คูณ หาร</span>
+
+<span>GitHub</span>
+
+<span>การสื่อสาร</span>
+
+
+</div>
+
+
+
+
+<h2>My Hobby</h2>
+
+<div class="card">
+
+- ทำอาหาร<br>
+
+- ดูหนัง<br>
+
+- ฟังเพลง<br>
+
+- วาดรูป<br>
+
+
+</div>
+
+
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="personal.html">Personal</a>
+
+<a href="education.html">Education</a>
+
+<a href="activity.html">Activity</a>
+
+<a href="contact.html">Contact</a>
+
+
+</nav>
+
+
+</div>
+
+
+
+</body>
+</html>
+```

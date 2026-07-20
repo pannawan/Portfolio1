@@ -1,54 +1,16 @@
-/* ==========================
-
-   Google Font
-
-========================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
-
-*{
+body{
 
     margin:0;
 
-    padding:0;
+    font-family:Prompt,sans-serif;
 
-    box-sizing:border-box;
-
-    font-family:'Prompt',sans-serif;
-
-    scroll-behavior:smooth;
-
-}
-
-/* ==========================
-
-   Body
-
-========================== */
-
-body{
-
-    background:linear-gradient(180deg,#eaf7ff,#f9fdff);
-
-    color:#333;
+    background:linear-gradient(#dff6ff,#b8e8ff);
 
     overflow-x:hidden;
 
 }
 
-/* ==========================
-
-   Navbar
-
-========================== */
-
-nav{
-
-    width:100%;
-
-    background:rgba(255,255,255,.75);
-
-    backdrop-filter:blur(12px);
+.bubbles{
 
     position:fixed;
 
@@ -56,27 +18,83 @@ nav{
 
     left:0;
 
+    width:100%;
+
+    height:100%;
+
+    z-index:-1;
+
+}
+
+.bubbles span{
+
+    position:absolute;
+
+    bottom:-100px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.4);
+
+    animation:float linear infinite;
+
+}
+
+.bubbles span:nth-child(1){left:5%;width:25px;height:25px;animation:float 8s infinite;}
+
+.bubbles span:nth-child(2){left:20%;width:50px;height:50px;animation:float 12s infinite;}
+
+.bubbles span:nth-child(3){left:35%;width:35px;height:35px;animation:float 10s infinite;}
+
+.bubbles span:nth-child(4){left:50%;width:60px;height:60px;animation:float 15s infinite;}
+
+.bubbles span:nth-child(5){left:65%;width:30px;height:30px;animation:float 9s infinite;}
+
+.bubbles span:nth-child(6){left:80%;width:45px;height:45px;animation:float 13s infinite;}
+
+.bubbles span:nth-child(7){left:92%;width:20px;height:20px;animation:float 7s infinite;}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+nav{
+
+    background:#6ec6ff;
+
     display:flex;
 
     justify-content:space-between;
 
-    align-items:center;
-
-    padding:18px 10%;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.05);
-
-    z-index:999;
+    padding:15px 40px;
 
 }
 
-.logo{
+nav h2{
 
-    font-size:28px;
-
-    font-weight:700;
-
-    color:#3fa9f5;
+    color:white;
 
 }
 
@@ -88,322 +106,96 @@ nav ul{
 
 }
 
-nav ul li{
+nav li{
 
-    margin-left:30px;
-
-}
-
-nav ul li a{
-
-    color:#3b4a5a;
-
-    text-decoration:none;
-
-    font-weight:500;
-
-    transition:.3s;
+    margin-left:20px;
 
 }
 
-nav ul li a:hover{
-
-    color:#54b9ff;
-
-}
-
-/* ==========================
-
-   Hero
-
-========================== */
-
-.hero{
-
-    min-height:100vh;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:130px 10% 80px;
-
-    gap:50px;
-
-}
-
-.hero-text{
-
-    flex:1;
-
-}
-
-.hero-text h3{
-
-    color:#5caeff;
-
-    margin-bottom:10px;
-
-}
-
-.hero-text h1{
-
-    font-size:70px;
-
-    color:#2795e9;
-
-    margin-bottom:10px;
-
-}
-
-.hero-text h2{
-
-    font-size:34px;
-
-    margin-bottom:15px;
-
-}
-
-.hero-text p{
-
-    line-height:1.8;
-
-    color:#666;
-
-    margin-bottom:30px;
-
-}
-
-/* ==========================
-
-   Button
-
-========================== */
-
-.btn{
-
-    display:inline-block;
-
-    background:#67c5ff;
+nav a{
 
     color:white;
 
     text-decoration:none;
 
-    padding:14px 32px;
+}
 
-    border-radius:50px;
+.hero{
 
-    font-weight:600;
+    display:flex;
 
-    transition:.35s;
+    justify-content:space-around;
 
-    box-shadow:0 10px 20px rgba(82,180,255,.35);
+    align-items:center;
+
+    padding:60px;
 
 }
 
-.btn:hover{
+.text h1{
 
-    transform:translateY(-4px);
+    font-size:60px;
 
-    background:#46b5ff;
-
-}
-
-/* ==========================
-
-   Hero Image
-
-========================== */
-
-.hero-image{
-
-    flex:1;
-
-    text-align:center;
+    color:#2196f3;
 
 }
 
-.hero-image img{
+.button{
 
-    width:340px;
+    display:inline-block;
+
+    padding:10px 25px;
+
+    background:#2196f3;
+
+    color:white;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+}
+
+.image img{
+
+    width:250px;
 
     border-radius:50%;
 
-    border:8px solid white;
-
-    box-shadow:0 20px 40px rgba(0,0,0,.12);
-
-    transition:.5s;
-
 }
-
-.hero-image img:hover{
-
-    transform:scale(1.05);
-
-}
-
-/* ==========================
-
-   Cards
-
-========================== */
 
 .cards{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    justify-content:center;
 
-    gap:30px;
+    gap:20px;
 
-    padding:70px 10%;
+    padding:30px;
 
 }
 
 .card{
 
-    background:rgba(255,255,255,.75);
+    background:white;
 
-    backdrop-filter:blur(10px);
+    padding:20px;
 
-    border-radius:25px;
+    width:220px;
 
-    padding:35px;
+    border-radius:15px;
 
     text-align:center;
 
-    transition:.4s;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    box-shadow:0 0 10px #ccc;
 
 }
-
-.card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.card h2{
-
-    font-size:50px;
-
-    margin-bottom:15px;
-
-}
-
-.card h3{
-
-    color:#2899f1;
-
-    margin-bottom:10px;
-
-}
-
-/* ==========================
-
-   Footer
-
-========================== */
 
 footer{
 
     text-align:center;
 
-    padding:35px;
-
-    color:#777;
-
-}
-
-/* ==========================
-
-   Animation
-
-========================== */
-
-.hero,
-
-.card{
-
-    animation:fade 1s;
-
-}
-
-@keyframes fade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(35px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ==========================
-
-   Responsive
-
-========================== */
-
-@media(max-width:900px){
-
-.hero{
-
-flex-direction:column-reverse;
-
-text-align:center;
-
-}
-
-.hero-text h1{
-
-font-size:50px;
-
-}
-
-.hero-image img{
-
-width:260px;
-
-}
-
-nav{
-
-flex-direction:column;
-
-padding:15px;
-
-}
-
-nav ul{
-
-margin-top:15px;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-nav ul li{
-
-margin:8px;
-
-}
+    padding:20px;
 
 }
